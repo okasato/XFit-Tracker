@@ -4,7 +4,7 @@ const Workouts = mongoose.Schema({
   exercise: {
     squat: [String],
     deadlift: [String],
-    Press: [String],
+    press: [String],
     clean: [String],
     jerk: [String],
     snatch: [String],
