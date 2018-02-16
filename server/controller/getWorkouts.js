@@ -1,4 +1,3 @@
-// const Workouts = require('../../db/schema/Workouts');
 const Workouts = require('../../schema/Workouts');
 
 module.exports = (req, res) => {
