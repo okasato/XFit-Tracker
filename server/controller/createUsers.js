@@ -1,7 +1,10 @@
 const Users = require('../../schema/Users');
 
 module.exports = (req, res) => {
-  Users.insert({ 'username': req.body.username })
-    .then(() => res.send('Add new user'))
-    .catch(err => res.status(500).json({ err }));
+  console.log('this is req body', req.body);
+  new Users({ 'username': req.body.username })
+    .save(err => {
+      if (err) throw res.status(500).json({ err });
+      return res.send('Add new user');
+    })
 };

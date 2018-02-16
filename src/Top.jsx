@@ -15,7 +15,7 @@ export default class Top extends Component {
     const username = this.state.value;
     fetch(`${process.env.BASE_URL}/api/users`, {
       method: 'POST',
-      body: JSON.stringify(username),
+      body: JSON.stringify({ username }),
       headers: new Headers({
         'Content-Type': 'application/json',
         Accept: 'application/json',
@@ -28,6 +28,7 @@ export default class Top extends Component {
   handleChange(e) {
     e.preventDefault();
     this.setState({ value: e.target.value });
+    console.log('submit');
   }
 
   render() {
