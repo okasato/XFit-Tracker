@@ -25,15 +25,15 @@ export default class SelectBox extends Component {
 
   render() {
       return (
-        <div className='selectbox'>
-          {this.props.label} 
+        <div className='selectbox' style={{textAlign: 'center'}}>
+          <div style={{fontFamily: 'sans-serif', marginBottom: 10, fontSize: 30}}>{this.props.label}</div> 
           <div>
-            <select className="select-field" value={this.state.selectedWorkouts} onChange={e => this.handleChange(e)}>
+            <select className="select-field" value={this.state.selectedWorkouts} onChange={e => this.handleChange(e)} style={{width: 500, padding: 5, marginBottom: 10, fontSize: 20}}>
               <option key={99} value={this.props.label}>{'Choose today\'s ' + this.props.label.toLowerCase()}</option>
               {this.props.workouts.map((workout, index) => (<option key={index} value={workout}>{workout}</option>))}
             </select>
           </div>
-          <textarea cols={50} value={this.state.value} onChange={e => this.handleChangeTextarea(e)}></textarea>
+          <textarea cols={48} rows={2} value={this.state.value} onChange={e => this.handleChangeTextarea(e)} style={{padding: 5, marginBottom: 20, fontSize: 20}}></textarea>
         </div>
       )
   }

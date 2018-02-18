@@ -91,6 +91,7 @@ export default class App extends Component {
         Accept: 'application/json',
       })
     })
+    .then(() => this.props.changeCurrentView('Date'))
     .then(() => console.log('Successfully add your record of work out'))
     .catch(err => console.log(err))
   }
@@ -183,7 +184,7 @@ export default class App extends Component {
     } else {
 
       return (
-        <div className='app'>
+        <div className='app' style={{textAlign: 'center'}}>
           <SelectBox 
             label={'Squat'} 
             workouts={this.state.workouts[0].exercise.squat}
@@ -238,7 +239,7 @@ export default class App extends Component {
             saveWorkout={this.saveOthers}
             saveText={this.saveTextInOthers} 
             />
-          <button onClick={this.handleSave}>Save</button>
+          <button onClick={this.handleSave} style={{WebkitAppearance: 'none', padding: 4, fontSize: 24, borderRadius: 3}}>Save</button>
         </div>
       )
     }

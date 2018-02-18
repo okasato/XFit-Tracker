@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import App from './App';
-import Date from './Date';
-import Navbar from './Navbar';
+// import App from './App';
+// import Date from './Date';
+// import Navbar from './Navbar';
 
 export default class LoginPage extends Component {
   constructor(props) {
@@ -21,6 +21,8 @@ export default class LoginPage extends Component {
     .then(res => {
       console.log('Successfully sign in');
       console.log(res.json());
+      this.props.setUsername(username);
+      this.props.changeCurrentView('Date');
     })
     .catch(err => console.log(err))
   }
@@ -50,7 +52,7 @@ export default class LoginPage extends Component {
       <div className='top' style={{textAlign: 'center', marginTop: 20, marginBottom: 40}}>
         <input type='text' value={this.state.value} onChange={e => this.handleChange(e)} style={{fontSize: 24, padding: 3}}/>
         <button onClick={this.handleSignUp} style={{WebkitAppearance: 'none', padding: 4, fontSize: 24, borderRadius: 3}}>Sign Up</button>
-        {' OR '}
+        <div style={{fontFamily: 'sans-serif', fontSize: 24, display: 'inline'}}> or </div>
         <button onClick={this.handleSignIn} style={{WebkitAppearance: 'none', padding: 4, fontSize: 24, borderRadius: 3}}>Sign In</button>
       </div>
     )
