@@ -61,7 +61,38 @@ export default class App extends Component {
   }
 
   handleSave() {
-    
+    fetch(`${process.env.BASE_URL}/api/users/${this.props.username}`, {
+      method: 'POST',
+      body: JSON.stringify({ 
+        date: this.props.date,
+        record: [
+          this.state.selectedSquat,
+          this.state.typyedTextSquat,
+          this.state.selectedDeadlift,
+          this.state.typyedTextDeadlift,
+          this.state.selectedPress,
+          this.state.typyedTextPress,
+          this.state.selectedClean,
+          this.state.typyedTextClean,
+          this.state.selectedJerk,
+          this.state.typyedTextJerk,
+          this.state.selectedSnatch,
+          this.state.typyedTextSnatch,
+          this.state.selectedPullups,
+          this.state.typyedTextPullups,
+          this.state.selectedPushups,
+          this.state.typyedTextPushups,
+          this.state.selectedOthers,
+          this.state.typyedTextOthers
+        ]
+      }),
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      })
+    })
+    .then(() => console.log('Successfully add your record of work out'))
+    .catch(err => console.log(err))
   }
 
   saveSquat(selectedSquat) {
