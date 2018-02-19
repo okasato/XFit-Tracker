@@ -41,7 +41,7 @@ export default class Date extends Component {
     return (
       <div className='date'>
         <div style={{textAlign: 'center', marginTop: 20, marginBottom: 40}}>
-          <div style={{fontFamily: 'sans-serif', fontSize: 24, padding: 3}}>Search a date</div>
+          {/* <div style={{fontFamily: 'sans-serif', fontSize: 24, padding: 3}}>Search a date</div> */}
           <input type="text" date={this.state.date} onChange={e => this.handleDateChange(e)} style={{fontSize: 24, padding: 3}}/>
           <button onClick={this.handleSearch} style={{WebkitAppearance: 'none', padding: 4, fontSize: 24, borderRadius: 3}}>Search</button>
           <div style={{fontFamily: 'sans-serif', fontSize: 24, display: 'inline'}}> Or </div>

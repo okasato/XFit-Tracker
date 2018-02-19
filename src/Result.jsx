@@ -6,7 +6,6 @@ export default class Result extends Component {
   }
 
   render() {
-    console.log('this is result', this.props.result);
     if (!this.props.result.length) {
       return (
         <div className='result'></div>
