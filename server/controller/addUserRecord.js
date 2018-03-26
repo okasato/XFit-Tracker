@@ -6,6 +6,7 @@ module.exports = (req, res) => {
     { $push: { workouts: req.body } },
     err => {
       if (err) throw res.status(500).json({ err });
+      return res.send('Add new record');
     }
   );
 };

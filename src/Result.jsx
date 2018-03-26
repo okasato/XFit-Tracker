@@ -14,11 +14,13 @@ export default class Result extends Component {
       return (
         <div className='result' style={{textAlign: 'center', marginTop: 20, marginBottom: 40}}>
           {this.props.result[0].record.map((record, index) => {
-            return(
-              <div key={index} style={{fontFamily: 'sans-serif', fontSize: 24, padding: 3}}>
-                {record}
-              </div>
-            )
+            if(record) {
+              return(
+                <div key={index} style={{fontFamily: 'sans-serif', fontSize: 24, padding: 3}}>
+                  {record}
+                </div>
+              )
+            }
           })}
         </div>
       )
