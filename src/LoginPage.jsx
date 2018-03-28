@@ -47,8 +47,8 @@ export default class LoginPage extends Component {
   render() {
     return (
       <div className='top' style={{textAlign: 'center', marginTop: 20, marginBottom: 40}}>
-        <input type='text' value={this.state.value} onChange={e => this.handleChange(e)} style={{fontSize: 24, padding: 3}}/>
-        <button onClick={this.handleSignUp} style={{fontFamily: 'Lato', WebkitAppearance: 'none', padding: 4, fontSize: 24, borderRadius: 3}}>Sign Up</button>
+        <input type='text' value={this.state.value} onChange={e => this.handleChange(e)} placeholder='User Name'style={{fontSize: 24, padding: 3}}/>
+        <button onClick={this.handleSignUp} style={{fontFamily: 'Lato', WebkitAppearance: 'none', padding: 4, fontSize: 24, borderRadius: 3, marginLeft: 5}}>Sign Up</button>
         <div style={{fontFamily: 'Lato', fontSize: 24, display: 'inline', color: 'white'}}> or </div>
         <button onClick={this.handleSignIn} style={{fontFamily: 'Lato', WebkitAppearance: 'none', padding: 4, fontSize: 24, borderRadius: 3}}>Sign In</button>
       </div>

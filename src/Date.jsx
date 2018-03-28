@@ -58,10 +58,22 @@ export default class Date extends Component {
         <div style={{textAlign: 'center', marginTop: 20, marginBottom: 40, color: 'white', fontFamily: 'Lato', fontSize: 24, padding: 3}}>
           <div>{this.props.username}'s Workouts Record</div>
           <p></p>
-          <input type='date' date={this.state.date} onChange={e => this.handleDateChange(e)} style={{fontSize: 22, padding: 3}}/>
-          <button onClick={this.handleSearch} style={{WebkitAppearance: 'none', borderRadius: 3, fontSize: 24, padding: 3}}>Search</button>
+          <input 
+            type='date' 
+            date={this.state.date} 
+            onChange={e => this.handleDateChange(e)} 
+            style={{fontSize: 22, padding: 3}}
+          />
+          <button 
+            onClick={this.handleSearch} 
+            style={{WebkitAppearance: 'none', borderRadius: 3, fontSize: 24, padding: 3, marginLeft: 5}}
+          >Search
+          </button>
           <div style={{display: 'inline'}}> or </div>
-          <button onClick={this.handleCreateNewRecord} style={{WebkitAppearance: 'none', borderRadius: 3, fontSize: 24, padding: 3}}>Create</button>
+          <button 
+            onClick={this.handleCreateNewRecord} 
+            style={{WebkitAppearance: 'none', borderRadius: 3, fontSize: 24, padding: 3}}
+          >Create</button>
         </div>
         <Result result={this.state.result}/>
       </div>
