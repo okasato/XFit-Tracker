@@ -24,12 +24,6 @@ app.use('/api/', [
   apiRouter
 ]);
 
-// app.use('/api/workouts', [
-//   bodyParser.json(), 
-//   bodyParser.urlencoded({ extended: true }), 
-//   apiRouter 
-// ]);
-
 const server = app.listen(1337, () => {
   console.log('Server up and listening on port 1337');
 });
